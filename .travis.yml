@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker buld -t oluwandy/docker-react -f Dockerfile.dev .
+
+script:
+  - docker run oluwandy/docker-react npm run test -- --coverage
