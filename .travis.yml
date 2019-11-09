@@ -6,4 +6,4 @@ before_install:
   - docker build -t oluwandy/docker-react -f Dockerfile.dev .
 
 script:
-  - docker run oluwandy/docker-react npm run test -- --coverage
+  - docker run -e CI=true oluwandy/docker-react npm run test
